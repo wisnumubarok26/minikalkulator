@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator</h1>
+        <p>Muhamad Wisnu Mubarok</p>
+        <div class="clc">
+            <!-- <form action=""> -->
+                <table>
+                    <tr>
+                        <td><label for="">Nilai 1</label></td>
+                        <td></td>
+                        <td><label for="">Nilai 2</label></td>
+                    </tr>
+                    <tr>                                                                            
+                        <td>
+                            <input id="nilai1" type="number">
+                        </td>
+                        <td>
+                            <select name="" id="select">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value="/">/</option>
+                                <option value="*">*</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input id="nilai2" type="number">
+                        </td>
+                        <td><input type="submit" id="submit"></td>
+                    </tr>
+                    
+                </table>
+            <!-- </form> -->
+            <div class="displayHasil">
+                <h1 id="hasilDsply" class="display">Hasil</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        let nilai1 = document.getElementById("nilai1")
+        let nilai2 = document.getElementById("nilai2")
+        let hasilDsply = document.getElementById("hasilDsply");
+        let submit = document.getElementById("submit");
+        let select = document.getElementById("select");
+        let hasil;
+
+        submit.addEventListener('click',()=>{
+            if(select.value==="+"){
+                tambah();
+                test();
+            }else if(select.value==="-"){
+                kurang();
+            }else if(select.value==="*"){
+                kali();
+            }else if(select.value==="/"){
+                bagi();
+            }
+        })
+
+        function tambah(){
+            hasil = Number(nilai1.value) + Number(nilai2.value)
+            hasilDsply.textContent= hasil;
+        }
+        kurang = ()=>{
+            hasil = Number(nilai1.value) - Number(nilai2.value)
+            hasilDsply.innerText= hasil;
+        }
+        bagi = ()=>{
+            hasil= Number(nilai1.value) / Number(nilai2.value)
+            hasilDsply.innerText= hasil;
+        }
+        kali = ()=>{
+            hasil= Number(nilai1.value) * Number(nilai2.value)
+            hasilDsply.innerText= hasil;
+        }
+
+        
+
+    </script>
+</body>
+</html>
